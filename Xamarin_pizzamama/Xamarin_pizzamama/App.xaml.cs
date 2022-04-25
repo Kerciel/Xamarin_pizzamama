@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin_pizzamama.views;
 
 namespace Xamarin_pizzamama
 {
@@ -10,7 +11,7 @@ namespace Xamarin_pizzamama
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage( new Listespizza());
         }
 
         protected override void OnStart()
