@@ -31,14 +31,24 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="50" />
                         </Grid.ColumnDefinitions>
-
-                        <Image Margin="10,15,5,10" Source="{Binding imageURL}" Aspect="AspectFill" Background="#F0F0F0" Grid.Row="0" Grid.Column="0" />
+                        <!--*****************************************************************************Partie Static*****************************-->
+                        <Image Margin="10,15,5,10" Source="pizza_block.jpg" Aspect="AspectFill" Background="#F0F0F0" Grid.Row="0" Grid.Column="0" />
                         <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
                             <Label Text="{Binding nom}" TextColor="Black" FontSize="26" />
                             <Label Text="{Binding ingredientStr}" TextColor="#5555" MaxLines="1" LineBreakMode="TailTruncation" FontSize="16"/>
                         </StackLayout>
 
                         <Label VerticalOptions="Center" Grid.Row="0" Grid.Column="2"  Text="{Binding prixEuro}" TextColor="Black"  FontSize="20"/>
+
+
+                        <!--*****************************************************************************Partie Dynamique*****************************
+                        <Image Margin="10,15,5,10" Source="pizza_block" Aspect="AspectFill" Background="#F0F0F0" Grid.Row="0" Grid.Column="0" />
+                        <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding nom}" TextColor="Black" FontSize="26" />
+                            <Label Text="{Binding ingredients}" TextColor="#5555" MaxLines="1" LineBreakMode="TailTruncation" FontSize="16"/>
+                        </StackLayout>
+
+                        <Label VerticalOptions="Center" Grid.Row="0" Grid.Column="2"  Text="{Binding prix}" TextColor="Black"  FontSize="20"/>-->
                     </Grid>
                 </ViewCell>
             </DataTemplate>
