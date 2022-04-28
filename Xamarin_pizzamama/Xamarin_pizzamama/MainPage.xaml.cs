@@ -17,7 +17,7 @@ namespace Xamarin_pizzamama
     public partial class MainPage : ContentPage
     {
 
-        // List<Pizza> pizzas = new List<Pizza> { };
+         List<Pizza> pizzas ;
         public MainPage()
         {
             //initialise la page 
@@ -87,6 +87,8 @@ namespace Xamarin_pizzamama
                 //getion des erreurs 
                 try
                 {
+                    //serialition 
+                    string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "pizzas.json");
                     //Etape 2
                     //pizzaJson= WEBCLIENT.DownloadString(urlpizzaeat);
                     WEBCLIENT.DownloadStringCompleted += (object sender, DownloadStringCompletedEventArgs e) =>
@@ -94,19 +96,26 @@ namespace Xamarin_pizzamama
                         //Etape 5
                         Console.WriteLine("Donne telecharger:" + e.Result);
                         string pizzaJson = e.Result;
-                        List<Pizza> pizzas = JsonConvert.DeserializeObject<List<Pizza>>(pizzaJson);
 
-                        //serialition 
-                        string fileName = "Crepe.json";
-                        File.WriteAllText(fileName,pizzaJson );
-                        Console.WriteLine(File.ReadAllText(fileName));
+
+                        //serialition dans un fichier pizzas.json
+                        File.WriteAllText(fileName, pizzaJson);
+
+
+                        string json = File.ReadAllText(fileName);
+                        pizzas = JsonConvert.DeserializeObject<List<Pizza>>(json);
+
                         Device.BeginInvokeOnMainThread(() =>
                         {
+                            
+
                             listes.ItemsSource = pizzas;
                             listes.IsVisible = true;
                             WaytLayout.IsVisible = false;
                             listes.IsRefreshing = false;
+                            
                         });
+                       
 
                     };
 
