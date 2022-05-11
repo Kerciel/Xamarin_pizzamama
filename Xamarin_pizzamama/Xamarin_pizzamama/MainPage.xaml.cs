@@ -87,7 +87,7 @@ namespace Xamarin_pizzamama
                 //getion des erreurs 
                 try
                 {
-                    //serialition 
+                    //assigne un nom de fichier pour n'importe plateforme mobile
                     string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "pizzas.json");
                     //Etape 2
                     //pizzaJson= WEBCLIENT.DownloadString(urlpizzaeat);
@@ -104,6 +104,7 @@ namespace Xamarin_pizzamama
 
                         string json = File.ReadAllText(fileName);
                         pizzas = JsonConvert.DeserializeObject<List<Pizza>>(json);
+                        
 
                         Device.BeginInvokeOnMainThread(() =>
                         {

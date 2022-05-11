@@ -9,7 +9,7 @@
 				Orientation="Horizontal">
 
             <Image Source="pizza_logo.png" HeightRequest="40" />
-            <Label Text="Pizzas-Eat" 
+            <Label Text="Menu" 
 			FontAttributes="Bold"
 			TextColor="White" VerticalOptions="Center" />
         </StackLayout>

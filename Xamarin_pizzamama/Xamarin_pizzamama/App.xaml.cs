@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Xamarin_pizzamama.views;
 
 namespace Xamarin_pizzamama
 {
@@ -11,7 +11,7 @@ namespace Xamarin_pizzamama
         {
             InitializeComponent();
             
-            var navigationpage = new NavigationPage(new MainPage());
+            var navigationpage = new NavigationPage(new MenuPage());
             navigationpage.BarBackgroundColor = Color.FromHex("#1abbd4");
 
             MainPage = navigationpage;
